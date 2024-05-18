@@ -4,6 +4,8 @@ package driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 
 public class WebDriverSingleton {
     private static WebDriver webDriver;
@@ -21,11 +23,11 @@ public class WebDriverSingleton {
 
     private void setDriverCapabilities() {
 
-        ChromeOptions options = new ChromeOptions();
+        EdgeOptions options = new EdgeOptions();
         options.addArguments("--disable-popup-blocking");
         options.addArguments("start-maximized");
         options.addArguments("disable-infobars");
-        webDriver = new ChromeDriver(options);
+        webDriver = new EdgeDriver(options);
     }
 
     public static WebDriver getWebDriver() {

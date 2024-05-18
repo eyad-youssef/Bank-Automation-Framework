@@ -3,7 +3,7 @@ package tests;
 //import browser.Browser;
 import driver.WebDriverSingleton;
 import platform.ParaBank;
-//import waits.WaitUtil;
+//import waits.Waits;
 
 public class BaseTest  {
     protected static WebDriverSingleton webDriver;

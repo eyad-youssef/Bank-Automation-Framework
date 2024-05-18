@@ -9,8 +9,9 @@ public class HooksHandler extends BaseTest {
     @Before(order = 1)
     public void initialize() throws InterruptedException {
         webDriver = WebDriverSingleton.getDriverSingleton();
+        webDriver.refreshCurrentUrl();
+        webDriver.resetCache();
 
-        webDriver.navigateTo("https://parabank.parasoft.com/parabank/index.htm");
 
     }
 
