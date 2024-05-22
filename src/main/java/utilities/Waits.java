@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.regex.Pattern;
+
 
 public class Waits {
 
@@ -30,9 +30,5 @@ public class Waits {
                 Duration.ofSeconds(waitTime)).until(ExpectedConditions.alertIsPresent());
     }
 
-    public boolean waitUntilTextMatches(By by , Pattern pattern){
-        return new WebDriverWait(WebDriverSingleton.getWebDriver(),
-                Duration.ofSeconds(waitTime)).until(ExpectedConditions.textMatches(by,pattern));
-    }
 
 }

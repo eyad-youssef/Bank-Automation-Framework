@@ -29,6 +29,7 @@ public class LoginPage extends BasePage {
 
     }
 
+
     public NewAccountPage openNewAccountPage(){
         return new NewAccountPage();
     }
