@@ -32,5 +32,8 @@ public class AccountOverviewPage extends BasePage {
 
 
     }
+    public  TransferFundsPage goToTransferFundsPage(){
+        return new TransferFundsPage();
+    }
 
 }

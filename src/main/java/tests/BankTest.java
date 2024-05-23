@@ -23,10 +23,19 @@ public class BankTest extends BaseTest {
 //        paraBank.newAccountPage.createNewAccount();
 //        paraBank.newAccountPage.createNewAccount();
 //        paraBank.newAccountPage.createNewAccount();
+//
         paraBank.accountOverviewPage= paraBank.newAccountPage.openAccountOverviewPage();
-        paraBank.accountOverviewPage.openAccountOverviewPageLink();
-        paraBank.accountOverviewPage.getTotalAmount("$3500000.00");
-        paraBank.accountOverviewPage.getAccountsCount();
+//        paraBank.accountOverviewPage.openAccountOverviewPageLink();
+//        paraBank.accountOverviewPage.getTotalAmount("$3500000.00");
+//        paraBank.accountOverviewPage.getAccountsCount();
+
+
+        paraBank.transferFundsPage=paraBank.accountOverviewPage.goToTransferFundsPage();
+//        paraBank.transferFundsPage.transferFunds("200");
+
+
+        paraBank.requestLoanPage=paraBank.transferFundsPage. goToRequestLoanPage();
+        paraBank.requestLoanPage.requestLoan("500","100");
 
     }
 
