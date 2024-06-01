@@ -19,20 +19,17 @@ public class NewAccountPage extends BasePage {
 
         waitUntilElementIsPresent(openNewAccountPageLink).click();
 
-
         Select selectType = new Select(waitUntilElementIsPresent(accountTypeList));
         selectType.selectByIndex(1);
-
 
         Select selectAmount = new Select(waitUntilElementIsPresent(newAccountAmountList));
         selectAmount.selectByIndex(0);
 
-
         waitUntilElementIsClickable(openNewAccountButton).click();
 
-
     }
-    public AccountOverviewPage openAccountOverviewPage(){
+
+    public AccountOverviewPage openAccountOverviewPage() {
         return new AccountOverviewPage();
     }
 

@@ -1,0 +1,12 @@
+pages\BasePage.class
+pages\subpages\TransferFundsPage.class
+platform\ParaBank.class
+pages\LoginPage.class
+tests\BankTest.class
+tests\HooksHandler.class
+pages\subpages\AccountOverviewPage.class
+pages\subpages\RequestLoanPage.class
+tests\BaseTest.class
+driver\WebDriverSingleton.class
+pages\subpages\NewAccountPage.class
+utilities\Waits.class

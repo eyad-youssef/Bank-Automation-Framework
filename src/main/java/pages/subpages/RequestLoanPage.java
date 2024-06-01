@@ -5,20 +5,20 @@ import org.openqa.selenium.support.ui.Select;
 import pages.BasePage;
 
 public class RequestLoanPage extends BasePage {
-    private final By requestLoanLinkPage =By.linkText("Request Loan");
-    private  final By loanAmountTextField = By.id("amount");
-    private final By downPaymentAmountTextField= By.id("downPayment");
-    private final By fromAccount= By.id("toAccountId");
-    private final  By applyButton =By.xpath("//input[@value='Apply Now']");
 
 
+    private final By requestLoanLinkPage = By.linkText("Request Loan");
+    private final By loanAmountTextField = By.id("amount");
+    private final By downPaymentAmountTextField = By.id("downPayment");
+    private final By fromAccount = By.id("fromAccountId");
+    private final By applyButton = By.xpath("//input[@value='Apply Now']");
 
 
-//     status
+    //     status
 //*[@id="loanStatus"]
 //     response
 //*[@id="loanRequestApproved"]
-    public  void requestLoan(String loanAmount, String downPaymentAmount ){
+    public void requestLoan(String loanAmount, String downPaymentAmount) {
         waitUntilElementIsPresent(requestLoanLinkPage).click();
         waitUntilElementIsClickable(loanAmountTextField).sendKeys(loanAmount);
         waitUntilElementIsClickable(downPaymentAmountTextField).sendKeys(downPaymentAmount);
@@ -28,6 +28,10 @@ public class RequestLoanPage extends BasePage {
 
         waitUntilElementIsPresent(applyButton).click();
 
+    }
+
+    public  BillPayPage goToBillPayPage(){
+        return  new BillPayPage();
     }
 
 }
