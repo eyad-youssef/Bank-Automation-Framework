@@ -1,0 +1,1 @@
+{"uuid":"be6507eb-1151-4067-993b-37068017f29f","name":"ParaBankAutomationFramework","children":["aa4a235e-998e-4d9b-adfe-300becff6480"],"befores":[{"name":"initialize","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1718096032236,"stop":1718096035580}],"afters":[],"start":1718096032127,"stop":1718096039880}

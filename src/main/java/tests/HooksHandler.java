@@ -3,15 +3,16 @@ package tests;
 
 import driver.WebDriverSingleton;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
+import org.testng.annotations.BeforeTest;
+import platform.ParaBank;
 
 public class HooksHandler extends BaseTest {
 
-    @Before(order = 1)
+    @BeforeTest
     public void initialize() throws InterruptedException {
-        webDriver = WebDriverSingleton.getDriverSingleton();
-        webDriver.refreshCurrentUrl();
-        webDriver.resetCache();
-
+//        webDriver.getWebDriver().navigate().to("https://parabank.parasoft.com/parabank/index.htm");
+        webDriver.navigateTo("https://parabank.parasoft.com/parabank/index.htm");
 
     }
 

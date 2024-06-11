@@ -13,6 +13,6 @@ public class BaseTest  {
 
     public BaseTest(){
         webDriver = WebDriverSingleton.getDriverSingleton();
-    }
+       }
 
 }

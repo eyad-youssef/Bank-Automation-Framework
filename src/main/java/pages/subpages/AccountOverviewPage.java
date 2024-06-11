@@ -9,8 +9,8 @@ import java.util.List;
 public class AccountOverviewPage extends BasePage {
 
 
-    private final By accountOverviewPageLink = By.linkText("Accounts Overview");
-    private final By accountsTable =           By.xpath("//table[@id='accountTable']/tbody/tr");
+    private final By accountOverviewPageLink = By.xpath("//div[@id='leftPanel']/child::li[2][contains(text(),'Accounts Overview')]");
+    private final By accountsTable =           By.xpath("//div[@id='showOverview']/child::table");
 
 
     public void openAccountOverviewPageLink()
