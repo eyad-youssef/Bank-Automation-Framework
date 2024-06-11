@@ -1,6 +1,5 @@
 package pages.subpages;
 
-import driver.WebDriverSingleton;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pages.BasePage;
@@ -23,7 +22,7 @@ public class AccountOverviewPage extends BasePage {
     }
 
     public int getAccountsCount() {
-        List<WebElement> rows = WebDriverSingleton.getWebDriver().findElements(accountsTable);
+        List<WebElement> rows = driver.findElements(accountsTable);
         System.out.println(rows.size());
         return rows.size();
     }
