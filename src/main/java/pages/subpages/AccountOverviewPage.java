@@ -1,5 +1,6 @@
 package pages.subpages;
 
+import driver.WebDriverSingleton;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pages.BasePage;
@@ -10,7 +11,7 @@ public class AccountOverviewPage extends BasePage {
 
 
     private final By accountOverviewPageLink = By.linkText("Accounts Overview");
-    private final By accountsTable = By.xpath("/div[@id='accountTable']//child::table[1]");
+    private final By accountsTable = By.xpath("//table[@id='accountTable']/child::tbody/tr[contains(td[2], '$3500000.00')]");
     private final By totalAmount = By.xpath("//table[@id='accountTable']/tbody/tr[contains(td[2], '$3500000.00')]");
 
     public void openAccountOverviewPageLink() {
@@ -22,7 +23,7 @@ public class AccountOverviewPage extends BasePage {
     }
 
     public int getAccountsCount() {
-        List<WebElement> rows = driver.findElements(accountsTable);
+        List<WebElement> rows = WebDriverSingleton.getWebDriver().findElements(accountsTable);
         System.out.println(rows.size());
         return rows.size();
     }

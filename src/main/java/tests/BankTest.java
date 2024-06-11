@@ -50,7 +50,7 @@ public class BankTest extends HooksHandler {
     }
 
     @Test(priority = 3)
-    public void createNewAccountTest() {
+    public void createNewAccountTest() throws InterruptedException {
         paraBank.newAccountPage = paraBank.accountOverviewPage.openNewAccountPage();
 //        paraBank.newAccountPage.createNewAccount();
 //        paraBank.newAccountPage.createNewAccount();
@@ -58,6 +58,7 @@ public class BankTest extends HooksHandler {
 
         paraBank.accountOverviewPage = paraBank.newAccountPage.openAccountOverviewPage();
         Assert.assertEquals(paraBank.accountOverviewPage.getAmount(),"Total $3500000.00  ");
+        Thread.sleep(4000);
         Assert.assertEquals(paraBank.accountOverviewPage.getAccountsCount(),5);
 
     }

@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 
 public class Waits {
@@ -20,6 +21,15 @@ public class Waits {
                 Duration.ofSeconds(waitTime)).until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
+
+
+
+//    public WebElement waitUntilElementIsPresent(List<By> by){
+//        return new WebDriverWait(WebDriverSingleton.getWebDriver(),
+//                Duration.ofSeconds(waitTime)).until(ExpectedConditions.presenceOfNestedElementsLocatedBy(by,));
+//    }
+//
+//
     public WebElement waitUntilElementIsClickable(By by){
         return new WebDriverWait(WebDriverSingleton.getWebDriver(),
                 Duration.ofSeconds(waitTime)).until(ExpectedConditions.elementToBeClickable(by));
