@@ -10,9 +10,7 @@ public class NewAccountPage extends BasePage {
     private final By openNewAccountPageLink = By.linkText("Open New Account");
     private final By accountTypeList = By.id("type");
     private final By newAccountAmountList = By.id("fromAccountId");
-    private final By openNewAccountButton = By.xpath("//*[@id=\"openAccountForm\"]/form/div/input");
-//*[@id="openAccountForm"]/form/div/input
-
+    private final By openNewAccountButton = By.xpath("//*[@id='openAccountForm']/form/div/input");
 
     public void createNewAccount() {
 
@@ -32,5 +30,6 @@ public class NewAccountPage extends BasePage {
     public AccountOverviewPage openAccountOverviewPage() {
         return new AccountOverviewPage();
     }
+
 
 }

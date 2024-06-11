@@ -36,8 +36,8 @@ public class RegisterPage extends BasePage {
 
     }
 
-    public boolean getRegisterStatus() {
-        return waitUntilElementIsPresent(statusMessage).isDisplayed();
+    public void getRegisterStatus() {
+         waitUntilElementIsPresent(statusMessage).isDisplayed();
     }
 
     public NewAccountPage openNewAccountPage() {

@@ -9,32 +9,29 @@ import java.util.List;
 public class AccountOverviewPage extends BasePage {
 
 
-    private final By accountOverviewPageLink = By.xpath("//div[@id='leftPanel']/child::li[2][contains(text(),'Accounts Overview')]");
-    private final By accountsTable =           By.xpath("//div[@id='showOverview']/child::table");
+    private final By accountOverviewPageLink = By.linkText("Accounts Overview");
+    private final By accountsTable = By.xpath("/div[@id='accountTable']//child::table[1]");
+    private final By totalAmount = By.xpath("//table[@id='accountTable']/tbody/tr[contains(td[2], '$3500000.00')]");
 
-
-    public void openAccountOverviewPageLink()
-    {
-
+    public void openAccountOverviewPageLink() {
         waitUntilElementIsPresent(accountOverviewPageLink).click();
     }
 
-    public void getTotalAmount(String amount) {
-
-        final By totalAmount = By.xpath("//table[@id='accountTable']/tbody/tr[contains(td[2], '" + amount + "')]");
-        System.out.println(
-                waitUntilElementIsPresent(totalAmount).getText());
+    public String getAmount() {
+        return  waitUntilElementIsPresent(totalAmount).getText();
     }
 
-    public void getAccountsCount() {
-
+    public int getAccountsCount() {
         List<WebElement> rows = driver.findElements(accountsTable);
         System.out.println(rows.size());
-
+        return rows.size();
     }
 
     public TransferFundsPage goToTransferFundsPage() {
         return new TransferFundsPage();
+    }
+    public NewAccountPage openNewAccountPage(){
+        return new NewAccountPage();
     }
 
 }
