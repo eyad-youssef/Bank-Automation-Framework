@@ -11,19 +11,30 @@ public class AccountOverviewPage extends BasePage {
 
     private final By accountOverviewPageLink = By.linkText("Accounts Overview");
     private final By accountsTable = By.xpath("//table[@id='accountTable']/child::tbody/tr[contains(td[2], '$3500000.00')]");
-    private final By totalAmount = By.xpath("//table[@id='accountTable']/tbody/tr[contains(td[2], '$3500000.00')]");
+    private final By table = By.xpath("//table[@id='accountTable']/child::tbody");
 
     public void openAccountOverviewPageLink() {
         waitUntilElementIsPresent(accountOverviewPageLink).click();
     }
 
     public String getAmount() {
-        return  waitUntilElementIsPresent(totalAmount).getText();
+
+       List<WebElement>cells =  waitUntilElementIsPresent(accountsTable).findElements(By.xpath("//td[contains(.,'$3500000.00')]"));
+        String cellData  = null;
+        for (WebElement cellElement : cells) {
+             cellData = cellElement.getText();
+//            cellData.
+//            System.out.print(cellData + "\t");
+        }
+        return cellData;
     }
 
     public int getAccountsCount() {
-        List<WebElement> rows = driver.findElements(accountsTable);
+
+//        System.out.println(waitUntilElementIsPresent(accountsTable).getSize());
+        List<WebElement> rows = waitUntilElementIsPresent(table).findElements(By.tagName("tr"));
         System.out.println(rows.size());
+
         return rows.size();
     }
 
