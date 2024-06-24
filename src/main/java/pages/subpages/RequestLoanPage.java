@@ -12,12 +12,11 @@ public class RequestLoanPage extends BasePage {
     private final By downPaymentAmountTextField = By.id("downPayment");
     private final By fromAccount = By.id("fromAccountId");
     private final By applyButton = By.xpath("//input[@value='Apply Now']");
+    private final By loanStatus  = By.xpath("//*[@id='loanStatus']");
+    private final By loanResult = By.xpath("//*[@id='loanRequestApproved']/child::p[1]");
 
 
-    //     status
-//*[@id="loanStatus"]
-//     response
-//*[@id="loanRequestApproved"]
+
     public void requestLoan(String loanAmount, String downPaymentAmount) {
         waitUntilElementIsPresent(requestLoanLinkPage).click();
         waitUntilElementIsClickable(loanAmountTextField).sendKeys(loanAmount);
@@ -28,6 +27,14 @@ public class RequestLoanPage extends BasePage {
 
         waitUntilElementIsPresent(applyButton).click();
 
+    }
+
+    public String getLoanStatus(){
+      return   waitUntilElementIsPresent(loanStatus).getText();
+    }
+
+    public  String getLoanResult(){
+      return  waitUntilElementIsPresent(loanResult).getText();
     }
 
     public  BillPayPage goToBillPayPage(){

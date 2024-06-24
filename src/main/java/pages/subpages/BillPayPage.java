@@ -19,6 +19,8 @@ public class BillPayPage extends BasePage {
     private final By amountTextField =                    By.name("amount");
     private final By fromAccountSelectList =              By.name("fromAccountId");
     private final By sendPaymentButton =                  By.xpath("//*[@value='Send Payment']");
+    private final By billStatus = By.xpath("//*[@id='billpayResult']/child::h1[@class='title']");
+    private final By billResult = By.xpath("//div[@id='billpayResult']/child::p[1][contains(.,'Bill Payment to ')]");
 
 
     public void payBill(
@@ -51,10 +53,14 @@ public class BillPayPage extends BasePage {
 
     }
 
-    public void v(String x){
-        
+    public String getBillStatus(){
+        System.out.println(waitUntilElementIsPresent(billStatus).getText());
+        return   waitUntilElementIsPresent(billStatus).getText();
+    }
 
-
+    public  String getBillResult(){
+        System.out.println(waitUntilElementIsPresent(billResult).getText());
+        return  waitUntilElementIsPresent(billResult).getText();
     }
 }
 
