@@ -1,50 +1,65 @@
 package tests.billPayment;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.Assert;
 import tests.BaseTest;
 
 public class PayBillStepDef extends BaseTest {
 
 
-    @Given("User login with {string} and {string}")
-    public void userLoginWithAnd(String arg0, String arg1, String arg2, String arg3) {
-    }
 
     @And("Click on Bill Pay page link")
     public void clickOnBillPayPageLink() {
+        paraBank.billPayPage.goToPayBillPage();
     }
 
     @When("Enter {string} and {string} and {string} and {string}")
-    public void enterAndAndAnd(String arg0, String arg1, String arg2, String arg3, String arg4, String arg5, String arg6, String arg7) {
+    public void enterBillDetails(String name, String address, String city, String state) {
+    paraBank.billPayPage.enterName(name);
+    paraBank.billPayPage.enterAddress(address);
+    paraBank.billPayPage.enterCity(city);
+    paraBank.billPayPage.enterState(state);
+
     }
 
     @And("Enter {string}and {string} and {string}")
-    public void enterAndAnd(String arg0, String arg1, String arg2, String arg3, String arg4, String arg5) {
+    public void enterRestOfBillDetails(String zipcode, String phoneNumber, String accountNumber) {
+
+   paraBank.billPayPage.enterZipCode(zipcode);
+   paraBank.billPayPage.enterPhoneNumber(phoneNumber);
+   paraBank.billPayPage.enterAccount(accountNumber);
+
+
     }
 
     @And("Verify {string}")
-    public void verfiy(String arg0, String arg1) {
+    public void verifyAccountNumber(String accountNumber) {
+        paraBank.billPayPage.verifyAccount(accountNumber);
     }
 
     @And("enter bill {string}")
-    public void enterBill(String arg0, String arg1) {
+    public void enterBillAmount(String amount) {
+        paraBank.billPayPage.enterAmount(amount);
     }
 
     @And("Select sender {string}")
-    public void selectSender(String arg0, String arg1) {
+    public void selectSender(/*String account*/) {
+        paraBank.billPayPage.selectSenderAccount(/*account*/);
     }
 
-    @io.cucumber.java.en.Then("Click on send payment button")
+    @Then("Click on send payment button")
     public void clickOnSendPaymentButton() {
+        paraBank.billPayPage.clickOnSendPaymentButton();
     }
 
-    @And("get payment status")
-    public void getPaymentStatus() {
+    @And("get payment status {string}")
+    public void getPaymentStatus(String paymentStatus) {
+        paraBank.billPayPage.getBillStatus(paymentStatus);
+
+        Assert.assertEquals(paraBank.billPayPage.getBillStatus(paymentStatus),"Bill Payment Complete") ;
+
     }
 
-    @And("get payment result")
-    public void getPaymentResult() {
-    }
 }

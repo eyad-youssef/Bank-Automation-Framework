@@ -15,43 +15,42 @@ public class TransferFundsPage extends BasePage {
     private final By transferResult = By.xpath("//div[@id='showResult']/child::p[1][contains(.,' has been transferred from account #')]");
 
 
-//    parent
+    //    parent
     //*[@id="showResult"]
 //    child
     //*[@id="showResult"]/p[1]
-
-
-    public void transferFunds(int senderAccountNum,int reciverAccountNum,  String amount) {
-
-
+    public void goToTransferFundsPage() {
         waitUntilElementIsPresent(transferFundsPageLink).click();
+    }
 
+    public void enterTransferredAmount(String amount) {
         waitUntilElementIsPresent(amountTransferredTextField).sendKeys(amount);
+    }
 
+    public void enterTransferAccounts(int senderAccountNum, int reciverAccountNum) {
         Select selectSrc = new Select(waitUntilElementIsPresent(fromAccount));
-        selectSrc.selectByIndex(senderAccountNum-1);
+        selectSrc.selectByIndex(senderAccountNum - 1);
 
 
         Select selectDest = new Select(waitUntilElementIsPresent(toAccount));
-        selectDest.selectByIndex(reciverAccountNum-1);
+        selectDest.selectByIndex(reciverAccountNum - 1);
 
+    }
 
+    public void clickOnTransferButton() {
         waitUntilElementIsClickable(transferButton).click();
+    }
 
+    public String getTransferFundsStatus(String transferFundsStatus) {
+
+
+        return transferFundsStatus = waitUntilElementIsPresent(transferStatus).getText();
 
     }
 
-    public String getTransferFundsStatus() {
+    public String getTransferFundsResult(String transferFundsResult) {
 
-
-        return waitUntilElementIsPresent(transferStatus).getText();
-
-    }
-
-    public String getTransferFundsResult() {
-
-        return
-                waitUntilElementIsPresent(transferResult).getText();
+        return transferFundsResult = waitUntilElementIsPresent(transferResult).getText();
 
     }
 

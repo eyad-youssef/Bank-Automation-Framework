@@ -12,33 +12,48 @@ public class RequestLoanPage extends BasePage {
     private final By downPaymentAmountTextField = By.id("downPayment");
     private final By fromAccount = By.id("fromAccountId");
     private final By applyButton = By.xpath("//input[@value='Apply Now']");
-    private final By loanStatus  = By.xpath("//*[@id='loanStatus']");
+    private final By loanStatus = By.xpath("//*[@id='loanStatus']");
     private final By loanResult = By.xpath("//*[@id='loanRequestApproved']/child::p[1]");
 
 
-
-    public void requestLoan(String loanAmount, String downPaymentAmount) {
+    public void goToRequestLoanPage() {
         waitUntilElementIsPresent(requestLoanLinkPage).click();
-        waitUntilElementIsClickable(loanAmountTextField).sendKeys(loanAmount);
-        waitUntilElementIsClickable(downPaymentAmountTextField).sendKeys(downPaymentAmount);
+    }
 
+    public void enterLoanAmount(String loanAmount) {
+        waitUntilElementIsClickable(loanAmountTextField).sendKeys(loanAmount);
+    }
+
+    public void enterDownPaymentAmount(String downPaymentAmount) {
+
+
+        waitUntilElementIsClickable(downPaymentAmountTextField).sendKeys(downPaymentAmount);
+    }
+
+    public void chooseAccount() {
         Select selectFromAccount = new Select(waitUntilElementIsClickable(fromAccount));
         selectFromAccount.selectByIndex(0);
+    }
 
+    public void clickOnApplyButton() {
         waitUntilElementIsPresent(applyButton).click();
 
     }
 
-    public String getLoanStatus(){
-      return   waitUntilElementIsPresent(loanStatus).getText();
+    public String getLoanStatus(String loanRequestStatus) {
+
+        loanRequestStatus = waitUntilElementIsPresent(loanStatus).getText();
+        return loanRequestStatus;
     }
 
-    public  String getLoanResult(){
-      return  waitUntilElementIsPresent(loanResult).getText();
+    public String getLoanResult(String loanRequestResult) {
+
+        loanRequestResult = waitUntilElementIsPresent(loanResult).getText();
+        return loanRequestResult;
     }
 
-    public  BillPayPage goToBillPayPage(){
-        return  new BillPayPage();
+    public BillPayPage goToBillPayPage() {
+        return new BillPayPage();
     }
 
 }

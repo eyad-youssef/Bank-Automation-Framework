@@ -12,19 +12,23 @@ public class NewAccountPage extends BasePage {
     private final By newAccountAmountList = By.id("fromAccountId");
     private final By openNewAccountButton = By.xpath("//*[@id='openAccountForm']/form/div/input");
 
-    public void createNewAccount() {
 
+   public void goToOpenNewAccountPage(){
+       waitUntilElementIsPresent(openNewAccountPageLink).click();
 
-        waitUntilElementIsPresent(openNewAccountPageLink).click();
+   }
 
-        Select selectType = new Select(waitUntilElementIsPresent(accountTypeList));
-        selectType.selectByIndex(1);
+   public void chooseAccountType(String type){
+       Select selectType = new Select(waitUntilElementIsPresent(accountTypeList));
+       selectType.selectByVisibleText(type);
 
-        Select selectAmount = new Select(waitUntilElementIsPresent(newAccountAmountList));
+   }
+    public void chooseAccount() {
+       Select selectAmount = new Select(waitUntilElementIsPresent(newAccountAmountList));
         selectAmount.selectByIndex(0);
-
+   }
+    public void clickOnOpenNewAccountButton(){
         waitUntilElementIsClickable(openNewAccountButton).click();
-
     }
 
     public AccountOverviewPage openAccountOverviewPage() {
