@@ -11,5 +11,5 @@ Feature: second scenario
     And get  loan request result "<loanRequestExpectedResult>"
     Examples:
       | username | password | amount | downPaymentAmount | loanRequestExpectedStatus | loanRequestExpectedResult |
-      |          |          | 1000   | 7000              |                           |                           |
-      |          |          | 7000   | 1000              |                           |                           |
+      | username | password | 1000   | 7000              |                           |                           |
+      | username | password | 7000   | 1000              |                           |                           |

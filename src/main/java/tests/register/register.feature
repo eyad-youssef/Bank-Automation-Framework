@@ -11,4 +11,4 @@ Feature:  Register new user
 
     Examples:
       | username | password | firstName | lastName | address    | city | state | zipCode | phoneNumber | SSN            | newUserName | newPassword |
-      |          |          | Jim       | Jim      | 21 Jump ST | NY   | NYw   | 55899   | +7888967452 | 25510075635887 | Tester2     | Tester2024  |
+      | username | password |Jim       | Jim      | 21 Jump ST | NY   | NYw   | 55899   | +7888967452 | 25510075635887 | Tester2     | Tester2024  |

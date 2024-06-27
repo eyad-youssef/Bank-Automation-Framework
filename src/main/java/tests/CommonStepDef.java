@@ -9,8 +9,8 @@ public class CommonStepDef extends  BaseTest{
 
     @Given("User login with {string} and {string}")
     public void userLoginWithAnd(String username, String password) {
-        paraBank.login.enterUsername(username);
-        paraBank.login.enterPassword(password);
+        paraBank.login.enterUsername(properties.getProperty(username));
+        paraBank.login.enterPassword(properties.getProperty(password));
         paraBank.login.clickOnLoginButton();
     }
 

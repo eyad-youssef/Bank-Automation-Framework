@@ -17,10 +17,10 @@ Feature:  first test case
     And enter new account
     Then click on create new account button
     Examples:
-      | username | password   | type    |
-      | Tester   | Tester2024 | SAVINGS |
-      | Tester   | Tester2024 | SAVINGS |
-      | Tester   | Tester2024 | SAVINGS |
+      | username | password | type    |
+      | username | password | SAVINGS |
+      | username | password | SAVINGS |
+      | username | password | SAVINGS |
 
 
   Scenario Outline: Get Accounts Overview After
@@ -30,7 +30,7 @@ Feature:  first test case
     And get accounts count"<count>"
     Examples:
       | username | password | totalAmount | count |
-      |          |          | 3,500,000   | 5     |
+      | username | password | 3,500,000   | 5     |
 
 
   Scenario Outline:transfer funds
@@ -42,7 +42,7 @@ Feature:  first test case
     And get transfer funds status "<transferFundsStatus>"
     And get transfer funds result "<transferFundsResult>"
     Examples:
-      | username | password   | amount | senderAccount | receiverAccount | transferFundsStatus | transferFundsResult |
-      | Tester   | Tester2024 | 3000   | 0             | 0               |                     |                     |
-      | Tester   | Tester2024 | 3700000 | 0             | 1               |                     |                     |
+      | username | password | amount  | senderAccount | receiverAccount | transferFundsStatus | transferFundsResult |
+      | username | password | 3000    | 0             | 0               |                     |                     |
+      | username | password | 3700000 | 0             | 1               |                     |                     |
 

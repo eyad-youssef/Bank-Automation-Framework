@@ -9,5 +9,5 @@ Feature Transfer Funds
     And get transfer funds status "<transferFundsStatus>"
     And get transfer funds result "<resultExpectedMessage>"
     Examples:
-      | username | password   | amount | senderAccount | receiverAccount | transferFundsStatus | resultExpectedMessage |
-      | Tester   | Tester2024 | 3000   | 0             | 0               |                     |                       |
+      | username | password | amount | senderAccount | receiverAccount | transferFundsStatus | resultExpectedMessage |
+      | username | password | 3000   | 0             | 0               |                     |                       |

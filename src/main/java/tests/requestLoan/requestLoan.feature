@@ -11,6 +11,6 @@ Feature: Request Loan
     And get  loan request result "<loanRequestResult>"
     Examples:
       | username | password | amount | downPaymentAmount | loanRequestStatus | loanRequestResult |
-      |          |          | 1000   | 7000              |                   |                   |
+      | username | password | 1000   | 7000              |                   |                   |
 
 

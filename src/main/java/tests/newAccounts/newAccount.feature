@@ -1,7 +1,6 @@
 Feature Create new account
 
 
-
   Scenario Outline: new account
     Given User login with "<username>" and "<password>"
     And Click on open new account page link
@@ -10,6 +9,6 @@ Feature Create new account
     Then click on create new account button
 
     Examples:
-      | username | password   | type    |
-      | Tester   | Tester2024 | SAVINGS |
+      | username | password | type    |
+      | username | password | SAVINGS |
 
