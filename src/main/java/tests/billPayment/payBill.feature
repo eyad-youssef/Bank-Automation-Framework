@@ -14,3 +14,14 @@ Feature: Bill Payment
     Examples:
       | username | password   | name | address    | city       | state | zipcode | phoneNumber   | accountNumber | accountNumber | amount | account | paymentStatus |
       | Tester   | Tester2024 | Jim  | 21 jump st | New Jersey | NY    | 13588   | +966487569123 | 13511         | 13511         | 500    |         |               |
+
+
+
+
+
+
+
+
+
+
+

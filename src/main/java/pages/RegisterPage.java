@@ -20,24 +20,45 @@ public class RegisterPage extends BasePage {
     private final By registerButton = By.xpath("//input[@value='Register']");
     private final By statusMessage = By.xpath("//div[@id='rightPanel']/child::p[1]");
 
-    public void register(String firstName, String lastName, String address, String city, String state, String zipCode, String phoneNumber, String SSN, String username, String password) {
+    public void enterNameDetails(String firstName, String lastName) {
         waitUntilElementIsPresent(firstNameTextField).sendKeys(firstName);
         waitUntilElementIsPresent(lastNameTextField).sendKeys(lastName);
+    }
+
+    public void enterAddressDetails(String address, String city, String state) {
         waitUntilElementIsPresent(addressTextField).sendKeys(address);
         waitUntilElementIsPresent(cityTextField).sendKeys(city);
         waitUntilElementIsPresent(stateTextField).sendKeys(state);
+
+    }
+
+    public void enterZipCode(String zipCode) {
         waitUntilElementIsPresent(zipCodeTextField).sendKeys(zipCode);
+
+    }
+
+    public void enterPhoneNumber(String phoneNumber) {
         waitUntilElementIsPresent(phoneNumberTextField).sendKeys(phoneNumber);
+
+    }
+
+    public void enterSSN(String SSN) {
         waitUntilElementIsPresent(SSNTextField).sendKeys(SSN);
+    }
+
+    public void enterNewUserNameAndPassword(String username, String password) {
         waitUntilElementIsPresent(userNameTextField).sendKeys(username);
         waitUntilElementIsPresent(passwordTextField).sendKeys(password);
         waitUntilElementIsPresent(confirmPasswordTextField).sendKeys(password);
+    }
+
+    public void clickOnRegisterButton() {
         waitUntilElementIsClickable(registerButton).click();
 
     }
 
     public void getRegisterStatus() {
-         waitUntilElementIsPresent(statusMessage).isDisplayed();
+        waitUntilElementIsPresent(statusMessage).isDisplayed();
     }
 
     public NewAccountPage openNewAccountPage() {

@@ -34,6 +34,7 @@ public class NewAccountPage extends BasePage {
     public AccountOverviewPage openAccountOverviewPage() {
         return new AccountOverviewPage();
     }
+    public TransferFundsPage openTransferFundsPage(){return new TransferFundsPage(); }
 
 
 }

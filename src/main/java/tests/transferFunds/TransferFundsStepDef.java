@@ -9,6 +9,7 @@ import tests.BaseTest;
 public class TransferFundsStepDef extends BaseTest {
     @And("Click on transfer funds  page link")
     public void clickOnTransferFundsPageLink() {
+        paraBank.transferFundsPage= paraBank.newAccountPage.openTransferFundsPage();
         paraBank.transferFundsPage.goToTransferFundsPage();
 
     }
@@ -29,16 +30,16 @@ public class TransferFundsStepDef extends BaseTest {
     }
 
     @And("get transfer funds status {string}")
-    public void getTransferFundsStatus(String transferFundsStatus) {
+    public void getTransferFundsStatus(String transferFundsStatus ,String transferFundsExpectedStatus) {
         paraBank.transferFundsPage.getTransferFundsStatus(transferFundsStatus);
-        Assert.assertEquals(paraBank.transferFundsPage.getTransferFundsStatus(transferFundsStatus),"Transfer Failed !");
+        Assert.assertEquals(paraBank.transferFundsPage.getTransferFundsStatus(transferFundsStatus),transferFundsExpectedStatus);
 
     }
 
     @And("get transfer funds result {string}")
-    public void getTransferFundsResult(String transferFundsResult) {
+    public void getTransferFundsResult(String transferFundsResult, String resultExpectedMessage) {
         paraBank.transferFundsPage.getTransferFundsResult(transferFundsResult);
-        Assert.assertEquals(paraBank.transferFundsPage.getTransferFundsResult(transferFundsResult),"You can not transfer the amount to same account.");
+        Assert.assertEquals(paraBank.transferFundsPage.getTransferFundsResult(transferFundsResult),resultExpectedMessage);
 
     }
 }

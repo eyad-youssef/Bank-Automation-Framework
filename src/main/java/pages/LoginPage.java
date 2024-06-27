@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import pages.subpages.AccountOverviewPage;
 import pages.subpages.NewAccountPage;
+import pages.subpages.RequestLoanPage;
 
 //import static com.sun.tools.javac.jvm.ByteCodes.ret;
 
@@ -56,8 +57,9 @@ public class LoginPage extends BasePage {
         return new RegisterPage();
  }
 
- public AccountOverviewPage openAccountOverviewPage( ){return new AccountOverviewPage();}
+    public AccountOverviewPage openAccountOverviewPage( ){return new AccountOverviewPage();}
     public NewAccountPage openNewAccountPage(){
         return new NewAccountPage();
     }
+    public RequestLoanPage openRequestLoanPage(){return  new RequestLoanPage();}
 }

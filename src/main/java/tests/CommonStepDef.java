@@ -2,6 +2,7 @@ package tests;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 import org.testng.Assert;
 
 public class CommonStepDef extends  BaseTest{
@@ -12,10 +13,17 @@ public class CommonStepDef extends  BaseTest{
         paraBank.login.enterPassword(password);
         paraBank.login.clickOnLoginButton();
     }
+
+    @When("Click on accounts overview page link")
+    public void goToAccountsOverviewPage(){
+
+     paraBank.accountOverviewPage=   paraBank.login.openAccountOverviewPage() ;
+     paraBank.accountOverviewPage.openAccountOverviewPageLink();
+    }
     @And("get total {string}")
-    public void getTotalAmount(String amount) {
+    public void getTotalAmount(String totalAmount) {
         paraBank.accountOverviewPage.getAmount();
-        Assert.assertEquals(paraBank.accountOverviewPage.getAmount(),amount/*"$3500000.00"*/);}
+        Assert.assertEquals(paraBank.accountOverviewPage.getAmount(), totalAmount/*"$3500000.00"*/);}
 
     @And("get accounts count{string}")
     public void getAccountsCount(int count){

@@ -7,7 +7,7 @@ Feature Transfer Funds
     And Choose sender "<senderAccount>"and receiver "<receiverAccount>"
     Then  click on apply transfer button
     And get transfer funds status "<transferFundsStatus>"
-    And get transfer funds result "<transferFundsResult>"
+    And get transfer funds result "<resultExpectedMessage>"
     Examples:
-      | username | password   | amount | senderAccount | receiverAccount | transferFundsStatus | transferFundsResult |
-      | Tester   | Tester2024 | 3000   | 0             | 0               |                     |                     |
+      | username | password   | amount | senderAccount | receiverAccount | transferFundsStatus | resultExpectedMessage |
+      | Tester   | Tester2024 | 3000   | 0             | 0               |                     |                       |

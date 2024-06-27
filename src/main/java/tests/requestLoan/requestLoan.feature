@@ -12,3 +12,5 @@ Feature: Request Loan
     Examples:
       | username | password | amount | downPaymentAmount | loanRequestStatus | loanRequestResult |
       |          |          | 1000   | 7000              |                   |                   |
+
+
