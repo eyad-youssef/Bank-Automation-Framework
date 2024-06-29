@@ -7,6 +7,9 @@
 <!--            <class name="com.example.tests.TestCase2" />-->
 <!--            &lt;!&ndash; Add more test classes here &ndash;&gt;-->
 <!--        </classes>-->
+        <classes>
+            <class name="tests.StepDefinitions" />
+        </classes>
     </test>
 
     <!-- Add more <test> sections for additional test suites -->
@@ -14,5 +17,3 @@
     <listeners>
         <listener class-name="io.qameta.allure.testng.AllureTestNg" />
     </listeners>
-
-</suite>
