@@ -14,8 +14,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>8</source>
-                    <target>8</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
 
@@ -56,12 +56,12 @@
         <java.release.version>11</java.release.version>
         <maven.surefire.version>3.1.0</maven.surefire.version>
         <maven.source.encoding>UTF-8</maven.source.encoding>
-<!--        <suite-xml>../success-factor-testng.xml</suite-xml>-->
-<!--        <java.faker.version>1.0.2</java.faker.version>-->
+
+<!-- <java.faker.version>1.0.2</java.faker.version>-->
         <allure.testng.version>2.17.3</allure.testng.version>
         <slf4j.version>2.0.7</slf4j.version>
         <allure.testng.version>2.17.3</allure.testng.version>
-        <cucmber.version>7.14.0</cucmber.version>
+        <cucmber.version>7.18.0</cucmber.version>
     </properties>
     <dependencies>
 
