@@ -18,7 +18,6 @@ public class HooksHandler extends BaseTest {
 
     @BeforeTest
     public void initialize() throws InterruptedException {
-//        webDriver.getWebDriver().navigate().to("https://parabank.parasoft.com/parabank/index.htm");
         webDriver.navigateTo("https://parabank.parasoft.com/parabank/index.htm");
 
     }
@@ -28,11 +27,17 @@ public class HooksHandler extends BaseTest {
         if (result.getStatus() == ITestResult.FAILURE) {
             TakesScreenshot screenshotDriver = getScreenshotDriver();
             File screenshotFile = screenshotDriver.getScreenshotAs(OutputType.FILE);
-            String screenshotDestination = "src/main/java/screenshots" + result.getName() + ".png";
+            String screenshotDestination = "src/test/java/screenshots" + result.getName() + ".png";
             Files.copy(screenshotFile.toPath(), new File(screenshotDestination).toPath(), StandardCopyOption.REPLACE_EXISTING);
         }
 
 
+    }
+
+
+    @AfterMethod
+    public void tearDown() {
+        webDriver.close();
 
     }
 

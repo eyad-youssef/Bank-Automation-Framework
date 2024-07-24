@@ -50,7 +50,7 @@ public class WebDriverSingleton {
         webDriver.manage().deleteAllCookies();
     }
 
-    public static void close() {
+    public  void close() {
         webDriver.quit();
     }
 }
